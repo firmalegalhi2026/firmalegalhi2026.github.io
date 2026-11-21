@@ -42,6 +42,12 @@
   .hero svg.rios{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
   .hero .logo-caja{position:relative;display:inline-block;background:#fff;border-radius:22px;padding:18px 22px;box-shadow:0 16px 50px rgba(0,0,0,.35);max-width:min(560px,92vw)}
   .hero .logo-caja img{display:block;width:100%;height:auto}
+  .hero a.logo-caja{transition:transform .2s, box-shadow .2s}
+  .hero a.logo-caja:hover{transform:translateY(-3px);box-shadow:0 22px 60px rgba(0,0,0,.45)}
+  .hero a.logo-caja:active{transform:scale(.98)}
+  .toque{position:relative;margin-top:12px;font-size:14px;color:#c9ced6}
+  .toque::before{content:"";display:inline-block;width:8px;height:8px;margin-right:8px;border-radius:50%;background:#e9ecef;box-shadow:0 0 0 0 rgba(233,236,239,.7);animation:pulso 2s infinite;vertical-align:middle}
+  @keyframes pulso{0%{box-shadow:0 0 0 0 rgba(233,236,239,.7)}70%{box-shadow:0 0 0 10px rgba(233,236,239,0)}100%{box-shadow:0 0 0 0 rgba(233,236,239,0)}}
   .leyenda{position:relative;margin:22px 0 6px;letter-spacing:.32em;text-transform:uppercase;font-size:15px;color:var(--plata-soft)}
   .hero p.sub{position:relative;max-width:620px;margin:10px auto 26px;color:#d7dce3;font-size:18px}
   .hero .acciones{position:relative;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -106,7 +112,8 @@
     </path>
   </svg>
   <div class="wrap">
-    <div class="logo-caja"><img src="logo.jpg" alt="Firma Legal Penal Hernández &amp; Iza" width="1000" height="486"></div>
+    <a class="logo-caja" href="portal.html" aria-label="Entrar a mi carpeta"><img src="logo.jpg" alt="Firma Legal Penal Hernández &amp; Iza" width="1000" height="486"></a>
+    <div class="toque">Toque el logo para entrar a su carpeta</div>
     <div class="leyenda">Litigio Penal y Amparo</div>
     <p class="sub">Estamos con usted en cada paso de su caso. La Paz, Baja California Sur.</p>
     <div class="acciones">
@@ -148,7 +155,7 @@
 <section class="alt" id="mi-carpeta">
   <div class="wrap">
     <div class="carpeta">
-      <img src="icono-192.png" alt="" width="92" height="92">
+      <a href="portal.html" aria-label="Entrar a mi carpeta"><img src="icono-192.png" alt="" width="92" height="92"></a>
       <div class="txt">
         <h3>Mi carpeta</h3>
         <p>Si es cliente del despacho, consulte aquí los avances, audiencias y citas de su asunto con el usuario y el código de acceso que le dio el despacho.</p>
