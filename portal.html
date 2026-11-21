@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hernández &amp; Iza</title>
+<meta name="description" content="Portal de clientes · Firma Legal Penal Hernández &amp; Iza">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#14284a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hernández &amp; Iza">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+  :root { --azul:#14284a; --plata:#c9ced6; --blanco:#ffffff; }
+  html, body { margin:0; height:100%; background:var(--azul); font-family: Georgia, "Times New Roman", serif; }
+  #app { position:fixed; inset:0; width:100%; height:100%; border:0; background:var(--azul); }
+  #carga { position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; background:var(--azul); color:var(--plata); transition:opacity .5s; z-index:2; }
+  #carga img { width:min(62vw,260px); border-radius:22px; box-shadow:0 10px 40px rgba(0,0,0,.35); }
+  #carga p { margin:0; letter-spacing:.25em; font-size:13px; text-transform:uppercase; }
+  #carga.fuera { opacity:0; pointer-events:none; }
+  #instalar { position:fixed; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom)); z-index:3; background:#fff; color:#14284a; border-radius:16px; padding:14px 16px; box-shadow:0 8px 30px rgba(0,0,0,.35); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size:14px; line-height:1.4; display:none; }
+  #instalar b { display:block; font-size:15px; margin-bottom:4px; }
+  #instalar .fila { display:flex; gap:8px; margin-top:10px; justify-content:flex-end; }
+  #instalar button { border:0; border-radius:10px; padding:9px 14px; font-size:14px; font-weight:600; cursor:pointer; }
+  #btnInstalar { background:#14284a; color:#fff; display:none; }
+  #btnCerrar { background:#e6e9ee; color:#14284a; }
+  #respaldo { display:none; position:fixed; inset:0; z-index:4; background:var(--azul); color:#fff; align-items:center; justify-content:center; flex-direction:column; gap:16px; padding:24px; text-align:center; font-family: system-ui, sans-serif; }
+  #respaldo a { background:#fff; color:#14284a; padding:12px 20px; border-radius:12px; text-decoration:none; font-weight:700; }
+</style>
+</head>
+<body>
+<div id="carga"><img src="icono-512.png" alt="Firma Legal Penal Hernández &amp; Iza"><p>Litigio penal y amparo</p></div>
+
+<iframe id="app" title="Mi carpeta Hernández &amp; Iza" referrerpolicy="no-referrer"
+  allow="clipboard-write"
+  src="https://script.google.com/macros/s/AKfycbyRmfLSYcfV-KUlBxFMjcknG8W0sUbziHBwHO4W4_qeJ5odV659FO4HEyFyqDvbNKrZAA/exec"></iframe>
+
+<div id="instalar" role="dialog" aria-label="Agregar a la pantalla de inicio">
+  <b>Tenga su carpeta a un toque</b>
+  <span id="txtInstalar"></span>
+  <div class="fila"><button id="btnCerrar" type="button">Ahora no</button><button id="btnInstalar" type="button">Agregar</button></div>
+</div>
+
+<div id="respaldo"><p>Si su carpeta no aparece, ábrala aquí:</p>
+  <a href="https://script.google.com/macros/s/AKfycbyRmfLSYcfV-KUlBxFMjcknG8W0sUbziHBwHO4W4_qeJ5odV659FO4HEyFyqDvbNKrZAA/exec" rel="noreferrer">Abrir mi carpeta</a></div>
+
+<script>
+(function () {
+  var carga = document.getElementById('carga');
+  var app = document.getElementById('app');
+  var listo = false;
+  app.addEventListener('load', function () { listo = true; setTimeout(function () { carga.classList.add('fuera'); }, 400); });
+  setTimeout(function () { if (!listo) document.getElementById('respaldo').style.display = 'flex'; }, 25000);
+
+  // Aviso para agregar el ícono (solo si aún no está instalada)
+  var instalada = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  var caja = document.getElementById('instalar'), txt = document.getElementById('txtInstalar'), btn = document.getElementById('btnInstalar');
+  var oculto = false; try { oculto = localStorage.getItem('hi_instalar_no') === '1'; } catch (e) {}
+  var ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  var evento = null;
+  function mostrar() { if (!instalada && !oculto) caja.style.display = 'block'; }
+  if (ios) { txt.textContent = 'Toque el botón Compartir (el cuadro con la flecha) y elija "Agregar a inicio". Aparecerá el logo del despacho en su pantalla.'; setTimeout(mostrar, 3000); }
+  else {
+    txt.textContent = 'Abra el menú ⋮ del navegador y elija "Agregar a la pantalla principal". Aparecerá el logo del despacho en su pantalla.';
+    window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); evento = e; btn.style.display = 'inline-block'; txt.textContent = 'Agregue el logo del despacho a su pantalla de inicio para entrar con un toque.'; mostrar(); });
+    setTimeout(mostrar, 3000);
+  }
+  btn.addEventListener('click', function () { if (evento) { evento.prompt(); evento = null; } caja.style.display = 'none'; });
+  document.getElementById('btnCerrar').addEventListener('click', function () { caja.style.display = 'none'; try { localStorage.setItem('hi_instalar_no', '1'); } catch (e) {} });
+
+  if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(function () {}); }
+})();
+</script>
+</body>
+</html>
