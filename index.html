@@ -85,6 +85,25 @@
   .wa{display:inline-block;background:#1f7a4d;color:#fff;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:12px;margin:4px 6px 4px 0}
   .emerg{background:#fff4dc;border:1px solid #f0d9a4;color:#7a5600;border-radius:12px;padding:12px 14px;margin-bottom:14px}
 
+  .tray-intro{max-width:760px;margin:0 auto 26px;text-align:center;color:var(--muted)}
+  .tray-cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:30px}
+  .tray-cifras div{background:var(--bg);border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:12px;padding:12px;text-align:center}
+  .tray-cifras b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;color:var(--navy)}
+  .tray-cifras span{font-size:13px;color:var(--muted)}
+  .tray-grupo{margin:26px 0 10px;font-size:22px}
+  .galeria{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+  .galeria figure{margin:0;background:var(--bg);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in;transition:transform .15s,box-shadow .15s}
+  .galeria figure:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(20,40,74,.12)}
+  .galeria img{width:100%;height:170px;object-fit:cover;object-position:top;display:block;background:#fff}
+  .galeria.fotos img{height:210px;object-position:center 30%}
+  .galeria figcaption{padding:9px 11px;font-size:14px;line-height:1.3;color:var(--ink,#262626)}
+  .galeria figcaption small{display:block;color:var(--muted);margin-top:3px}
+  .nota-priv{text-align:center;font-size:13px;color:var(--muted);margin-top:18px}
+  #visor{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh}
+  #visor::backdrop{background:rgba(10,20,40,.85)}
+  #visor img{max-width:94vw;max-height:88vh;display:block;border-radius:8px;background:#fff}
+  #visor button{position:fixed;top:14px;right:18px;font-size:30px;background:#fff;border:0;border-radius:50%;width:44px;height:44px;cursor:pointer}
+
   footer{background:var(--navy);color:#c9ced6;text-align:center;padding:26px 16px;font-size:14px}
   footer b{color:#fff}
 </style>
@@ -96,6 +115,7 @@
     <a class="marca" href="#inicio">Hernández &amp; Iza</a>
     <nav class="menu" aria-label="Secciones">
       <a href="#asesorias">Asesorías</a>
+      <a href="#trayectoria">Trayectoria</a>
       <a href="#videos">Videos</a>
       <a href="#conferencias">Conferencias</a>
       <a href="#contacto">Contacto</a>
@@ -139,7 +159,70 @@
   </div>
 </section>
 
-<section class="alt" id="videos">
+<section class="alt" id="trayectoria">
+  <div class="wrap">
+    <div class="titulo"><h2>Trayectoria</h2><div class="raya"></div></div>
+    <p class="tray-intro">Mtro. Oscar David Hernández Quiñonez: abogado penalista, Maestro en Derecho Procesal Penal con Mención Honorífica. Ha sido servidor público en seguridad pública, Defensor Público, asesor jurídico de víctimas, docente universitario y formador de operadores del sistema de justicia penal.</p>
+    <div class="tray-cifras">
+      <div><b>4</b><span>cargos directivos en la SSP de Sinaloa</span></div>
+      <div><b>6 años</b><span>como Defensor Público en juicios orales</span></div>
+      <div><b>12</b><span>ediciones como instructor del curso IPH</span></div>
+      <div><b>+590 h</b><span>de capacitación en el sistema acusatorio</span></div>
+    </div>
+
+    <h3 class="tray-grupo">En el aula y en la práctica</h3>
+    <div class="galeria fotos">
+      <figure><img loading="lazy" src="trayectoria/fotos/curso_76941189_100534568089795.jpg" alt="El Mtro. Oscar Hernández en instalaciones de la Policía Federal"><figcaption>Capacitación a la Policía Federal</figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/fotos/curso_60187491_2357528784522710.jpg" alt="El Mtro. Oscar Hernández exponiendo en un curso"><figcaption>Exposición en curso de capacitación</figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/fotos/curso_54799781_2328630630745859.jpg" alt="Curso a elementos de la Policía Federal"><figcaption>Curso a elementos de la Policía Federal</figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/fotos/curso_58460903_2349062002036055.jpg" alt="Curso a personal militar"><figcaption>Curso a personal militar y naval</figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/fotos/curso_69274253_2444968282445426.jpg" alt="Taller con operadores del sistema de justicia"><figcaption>Taller con operadores del sistema de justicia</figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/fotos/curso_59910990_2357528764522712.jpg" alt="Conferencia a estudiantes universitarios"><figcaption>Conferencia a estudiantes universitarios</figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/fotos/curso_50027925_2282141772061412.jpg" alt="Entrega de constancias a policías"><figcaption>Entrega de constancias a policías</figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/fotos/curso_498152376_4131426587132912.jpg" alt="Entrega de certificado"><figcaption>Entrega de certificado</figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/fotos/curso_46436338_2239596429649280.jpg" alt="En la Corte Interamericana de Derechos Humanos"><figcaption>Corte Interamericana de Derechos Humanos</figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/fotos/curso_51150896_2292648221010767.jpg" alt="En la Sala de Juicio Oral del Poder Judicial"><figcaption>Sala de Juicios Orales del Poder Judicial</figcaption></figure>
+    </div>
+
+    <h3 class="tray-grupo">Cargos públicos · Estado de Sinaloa</h3>
+    <div class="galeria">
+      <figure><img loading="lazy" src="trayectoria/01_subsecretario_sinaloa.jpg" alt="Nombramiento como Subsecretario de Estudios, Proyectos y Desarrollo"><figcaption>Subsecretario de Estudios, Proyectos y Desarrollo<small>Gobierno del Estado de Sinaloa · 2024</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/02_centros_penitenciarios.jpg" alt="Nombramiento como Jefe del Departamento de Control de Centros Penitenciarios"><figcaption>Jefe del Depto. de Control de Centros Penitenciarios<small>SSP Sinaloa · 2025</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/03_asuntos_juridicos.jpg" alt="Nombramiento como Jefe del Departamento de Asuntos Jurídicos"><figcaption>Jefe del Departamento de Asuntos Jurídicos<small>SSP Sinaloa · 2022</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/04_director_oeema.jpg" alt="Nombramiento como Director del Órgano Especializado en la Ejecución de Medidas para Adolescentes"><figcaption>Director del Órgano de Ejecución de Medidas para Adolescentes<small>SSP Sinaloa · 2021</small></figcaption></figure>
+    </div>
+
+    <h3 class="tray-grupo">Docencia y formación de operadores</h3>
+    <div class="galeria">
+      <figure><img loading="lazy" src="trayectoria/06_docente_certificado.jpg" alt="Constancia de Docente Certificado por Examen"><figcaption>Docente Certificado por Examen en el Sistema de Justicia Penal Acusatorio<small>SEGOB · SETEC · 2016</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/09_ponente_iph_federal.jpg" alt="Reconocimiento como ponente del curso Informe Policial Homologado a la Policía Federal"><figcaption>Ponente: «Informe Policial Homologado», Policía Federal<small>Gobierno de B.C.S. · 2019</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/10_ponente_iph_naval.jpg" alt="Reconocimiento como ponente del curso Informe Policial Homologado a militares de las zonas navales"><figcaption>Ponente: «Informe Policial Homologado», Zonas Navales 4 y 5<small>Gobierno de B.C.S. · 2019</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/11_ponente_primer_respondiente.jpg" alt="Reconocimiento como ponente del curso Nuevo Modelo de IPH y Primer Respondiente"><figcaption>Ponente: «Nuevo Modelo de IPH y Primer Respondiente»<small>Gobierno de B.C.S. · 2019</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/08_juicio_simulado_cwag.jpg" alt="Constancia de participación en el juicio simulado de la CWAG"><figcaption>Juicio simulado «El Estado vs. Carlos López» (24 h)<small>Alianza Estatal CWAG · 2016</small></figcaption></figure>
+    </div>
+
+    <h3 class="tray-grupo">Formación especializada</h3>
+    <div class="galeria">
+      <figure><img loading="lazy" src="trayectoria/05_embajada_eua.jpg" alt="Certificado de la Embajada de Estados Unidos"><figcaption>Mejores Prácticas para Unidades de Asuntos Internos<small>Embajada de EE. UU. en México (INL) · 2024</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/07_setec_defensores.jpg" alt="Constancia del Curso Básico para Defensores de la SETEC"><figcaption>Curso Básico para Defensores en el Sistema Penal Acusatorio (90 h)<small>SEGOB · SETEC · 2016</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/14_curso_defensores_100h.jpg" alt="Constancia del Curso Básico para Defensores de 100 horas"><figcaption>Curso Básico para Defensores del Nuevo Sistema de Justicia Penal (100 h)<small>Comisión Implementadora B.C.S. · 2014</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/17_asesor_victimas_100h.jpg" alt="Constancia de Capacitación para Asesor Jurídico de la Víctima"><figcaption>Capacitación para Asesor Jurídico de la Víctima (100 h)<small>Academia Regional de Seguridad Pública del Noroeste · 2015</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/13_tsj_sistema_acusatorio.jpg" alt="Constancia del curso Sistema Penal Acusatorio y Oral"><figcaption>Sistema Penal Acusatorio y Oral (40 h)<small>Tribunal Superior de Justicia de B.C.S. · 2011</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/12_scjn_amparo.jpg" alt="Constancia de la SCJN sobre la Nueva Ley de Amparo"><figcaption>La Nueva Ley de Amparo y la Reforma en Derechos Humanos<small>Suprema Corte de Justicia de la Nación · 2013</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/16_scjn_tesis.jpg" alt="Constancia de la SCJN sobre sistemas de consulta de tesis"><figcaption>Sistemas Electrónicos de Consulta de Tesis y Ejecutorias<small>Suprema Corte de Justicia de la Nación · 2018</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/15_uabcs_congreso.jpg" alt="Constancia del XII Congreso Nacional de Derecho de la UABCS"><figcaption>XII Congreso Nacional de Derecho<small>Universidad Autónoma de Baja California Sur · 2014</small></figcaption></figure>
+      <figure><img loading="lazy" src="trayectoria/18_master_practitioner.jpg" alt="Certificado License Master Practitioner of NLP"><figcaption>License Master Practitioner of NLP (comunicación y oratoria)<small>The First Institute of NLP · 2022</small></figcaption></figure>
+    </div>
+    <p class="nota-priv">Por privacidad, las firmas y los datos personales de los documentos aparecen cubiertos. Toque una imagen para verla completa.</p>
+  </div>
+</section>
+<dialog id="visor"><button type="button" aria-label="Cerrar" onclick="this.parentNode.close()">×</button><img alt=""></dialog>
+<script>
+document.querySelectorAll('.galeria figure').forEach(function(f){f.addEventListener('click',function(){var v=document.getElementById('visor'),i=f.querySelector('img');v.querySelector('img').src=i.src;v.querySelector('img').alt=i.alt;if(v.showModal)v.showModal();});});
+document.getElementById('visor').addEventListener('click',function(e){if(e.target===this)this.close();});
+</script>
+
+<section id="videos">
   <div class="wrap">
     <div class="titulo"><h2>Videos informativos</h2><div class="raya"></div></div>
     <div class="grid">
@@ -148,7 +231,7 @@
   </div>
 </section>
 
-<section id="conferencias">
+<section class="alt" id="conferencias">
   <div class="wrap">
     <div class="titulo"><h2>Conferencias</h2><div class="raya"></div></div>
     <div class="grid">
@@ -157,7 +240,7 @@
   </div>
 </section>
 
-<section class="alt" id="mi-carpeta">
+<section id="mi-carpeta">
   <div class="wrap">
     <div class="carpeta">
       <a href="portal.html" aria-label="Entrar a mi carpeta"><img src="icono-192.png" alt="" width="92" height="92"></a>
@@ -170,7 +253,7 @@
   </div>
 </section>
 
-<section id="contacto">
+<section class="alt" id="contacto">
   <div class="wrap">
     <div class="titulo"><h2>Contacto</h2><div class="raya"></div></div>
     <div class="card contacto" style="max-width:640px;margin:0 auto">
